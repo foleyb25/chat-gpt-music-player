@@ -57,6 +57,8 @@
   </script>
   
   <style>
+
+
 /* Style the range input */
 .slide-style {
   -webkit-appearance: none;
@@ -75,5 +77,6 @@
 .slide-style[type="range"]:focus {
   outline: none;
 }
+
   </style>
   
