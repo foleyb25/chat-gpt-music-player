@@ -1,13 +1,15 @@
 <template>
-    <div class="bg-[#333] bg-gradient-to-b from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)]">
-      <div class="flex items-center p-[20px]" v-if="selectedTrack.album">
+    <div class="h-screen p-4 bg-[#333] bg-gradient-to-b from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)]">
+      <div id="album-cover" class=" h-3/5 flex items-center p-[20px]" v-if="selectedTrack.album">
         <img class="w-full" :src="selectedTrack.album.images[0].url" alt="Album artwork">
+      </div>
+      <div id="track-details" class="h-1/5">
         <div class="ml-[20px]">
           <h1 class="text-[2em] text-[#fff] m-0">{{ selectedTrack.name }}</h1>
-          <h2 class="text-[1.5em] text-[#ccc] m-0">{{ selectedTrack.artists[0].name }}</h2>
+          <h2 v-if="selectedTrack.artists" class="text-[1.5em] text-[#ccc] m-0">{{ selectedTrack.artists[0].name }}</h2>
         </div>
       </div>
-      <div class="flex items-center py-0 px-[20px]">
+      <div class="h-1/5 flex items-center py-0 px-[20px]">
         <input class="slide-style w-full h-[5px] bg-[#ddd] rounded" type="range" v-model="currentTime" :max="duration" @input="seekTrack">
         <div class="ml-[20px] text-[#fff]">
             {{ formattedCurrentTime }} / {{ formattedDuration }}

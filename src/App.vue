@@ -3,8 +3,8 @@
   <div style="margin-bottom: 12px"> 
   </div>
   <div style="display:flex; justify-content:center; width:100%">
-    <PlaylistArea @selected-track="selectTrack" :tracks="state.tracks" style="width:20%"/>
-    <MainArea :selected-track="state.selectedTrack" style="width:80%"/>
+    <PlaylistArea @selected-track="selectTrack" :tracks="state.tracks" class="w-1/5"/>
+    <MainArea :selected-track="state.selectedTrack" class="w-4/5"/>
   </div>
   
 </template>
